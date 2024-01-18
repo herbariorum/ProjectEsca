@@ -6,20 +6,49 @@ import java.awt.*;
 
 public class TitlePanel extends JPanel {
     public JButton btnClose;
+
+
     public TitlePanel(){
         setLayout(new GridBagLayout());
-        setBorder(new EmptyBorder(20, 20, 20, 20));
+        setBorder(new EmptyBorder(5, 5, 5, 5));
         setBackground(Color.BLUE);
+
         btnClose = new JButton();
         btnClose.putClientProperty("JButton.buttonType", "roundRect");
         btnClose.setIcon(new ImageIcon(getClass().getResource("/images/Fechar.png")));
 
-        JLabel title = new JLabel("TOP PANEL");
+
+        JLabel title = new JLabel("LOGIN FORM");
         title.setForeground(Color.WHITE);
-        add(title);
-        add(btnClose);
+        title.setFont(new java.awt.Font("Roboto Black", Font.BOLD, 14));
+
+        addItem(this, title, 0, 0, 2, 1, GridBagConstraints.CENTER);
+        addItem(this, btnClose, 1, 0, 1, 1, GridBagConstraints.EAST);
     }
 
 
-
+    @Override
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+        Color color1 = new Color(87, 52, 71);
+        Color color2 = Color.black;
+        Graphics2D graphics2D = (Graphics2D) g;
+        GradientPaint p = new GradientPaint(0, 0, color1, getWidth(), 0, color2);
+        graphics2D.setPaint(p);
+        graphics2D.fillRect(0, 0, getWidth(), getHeight());
+    }
+    // X COL Y ROW
+    private void addItem(JPanel p, JComponent c, int x, int y, int width, int height, int align) {
+        GridBagConstraints gc = new GridBagConstraints();
+        gc.gridx = x;
+        gc.gridy = y;
+        gc.gridwidth = width;
+        gc.gridheight = height;
+        gc.weightx = 100.0;
+        gc.weighty = 100.0;
+        gc.insets = new Insets(5, 5, 5, 5);
+        gc.anchor = align;
+        gc.fill = GridBagConstraints.NONE;
+        p.add(c, gc);
+    }
 }

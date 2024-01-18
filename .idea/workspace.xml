@@ -4,16 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d807a0ca-7c0f-46c4-ba07-234c5f84e0be" name="Changes" comment="Adicionado FlatLighLaf">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Formulario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Logotipo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/TitlePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/Fechar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/bico_tech.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="d807a0ca-7c0f-46c4-ba07-234c5f84e0be" name="Changes" comment="Adicionado Login">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/TesteDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/RoleDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/UsuarioDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/RoleDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/UsuarioDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dominio/Roles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dominio/Usuarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/config/HibernateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/BCrypt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/CPF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/ComboBoxList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/55827_lock_padlock_private_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/key.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/images/mail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RoleDAOImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/AuthForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/AuthForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Formulario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Formulario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Logotipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Logotipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/TitlePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/TitlePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +40,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -53,7 +68,9 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.Application.executor": "Run",
     "Application.Esca.executor": "Run",
+    "Application.TesteDao.executor": "Run",
     "Application.org.esca.app.Application.executor": "Run",
+    "JUnit.RoleDAOImplTest.tesAddRole.executor": "Run",
     "Maven.ProjectEsca [clean].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -61,7 +78,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "11 (2)",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/elias/Workspace/ProjectEsca",
+    "last_opened_file_path": "/home/elias/Workspace/ProjectEsca/src/main/java/org/esca/app/util",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -69,11 +86,14 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/org/esca/app/util" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.esca.app" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.RoleDAOImplTest.tesAddRole">
     <configuration name="Esca" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-11-openjdk-amd64" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -89,11 +109,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TesteDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="org.esca.app.auth.TesteDao" />
+      <module name="ProjectEsca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.esca.app.auth.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="org.esca.app.Application" />
       <module name="ProjectEsca" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RoleDAOImplTest.tesAddRole" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjectEsca" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="RoleDAOImplTest" />
+      <option name="METHOD_NAME" value="tesAddRole" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -121,6 +166,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RoleDAOImplTest.tesAddRole" />
+        <item itemvalue="Application.TesteDao" />
         <item itemvalue="Application.Esca" />
       </list>
     </recent_temporary>
@@ -159,14 +206,23 @@
       <option name="project" value="LOCAL" />
       <updated>1705525681070</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adicionado Login">
+      <option name="closed" value="true" />
+      <created>1705533680895</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705533680895</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Primeiro commit" />
     <MESSAGE value="Adicionado FlatLighLaf" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionado FlatLighLaf" />
+    <MESSAGE value="Adicionado Login" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionado Login" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProjectEsca$Esca.ic" NAME="Esca Coverage Results" MODIFIED="1705521215549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

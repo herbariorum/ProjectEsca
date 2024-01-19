@@ -2,6 +2,8 @@ package org.esca.app.util;
 
 import org.esca.app.auth.dominio.Usuarios;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class Util {
@@ -22,5 +24,17 @@ public class Util {
     public boolean checkPassword(String pwd, Usuarios f) {
         boolean matched = BCrypt.checkpw(pwd, f.getPassword());
         return matched;
+    }
+
+    public LocalDate dateToLocalDate(String value){
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate ld = null;
+        try {
+             ld = LocalDate.parse(value, formatter);
+        } catch (Exception e) {
+            // Trate a exceção (por exemplo, imprima uma mensagem de erro ou faça algo apropriado para sua aplicação)
+            e.printStackTrace();
+        }
+        return ld;
     }
 }

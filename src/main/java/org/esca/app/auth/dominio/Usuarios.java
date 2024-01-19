@@ -16,7 +16,6 @@ public class Usuarios {
     private String phone;
     private String cargo;
     private java.time.LocalDate created_at;
-    private java.time.LocalDate updated_at;
 
     @ManyToOne
     @JoinColumn(name="role_id")

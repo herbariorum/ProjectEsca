@@ -80,7 +80,7 @@ public class RoleDAOImpl implements RoleDAO {
     @Override
     public void comboBoxRole() {
         this.setList(new ArrayList<>());
-        List<Roles> rolesList = em.createQuery("SELECT r FROM Roles BY r.role ASC", Roles.class).getResultList();
+        List<Roles> rolesList = em.createQuery("SELECT r FROM Roles r ORDER BY r.role ASC", Roles.class).getResultList();
         for (Roles r: rolesList){
             this.getList().add(new ComboBoxList(r.getId(), r.getRole()));
         }

@@ -1,5 +1,7 @@
 package org.esca.app.util;
 
+import org.esca.app.auth.dominio.Usuarios;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 public class Util {
@@ -11,5 +13,14 @@ public class Util {
         this.regex = Pattern.compile(pPassword);
         Matcher m = this.regex.matcher(pwd);
         return m.matches();
+    }
+
+    public String gerarPassword(String pwd) {
+        return BCrypt.hashpw(pwd, BCrypt.gensalt(12));
+    }
+
+    public boolean checkPassword(String pwd, Usuarios f) {
+        boolean matched = BCrypt.checkpw(pwd, f.getPassword());
+        return matched;
     }
 }

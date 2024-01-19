@@ -3,6 +3,8 @@ package org.esca.app.auth;
 
 import com.formdev.flatlaf.FlatClientProperties;
 import org.apache.commons.validator.routines.EmailValidator;
+import org.esca.app.FormMenu;
+import org.esca.app.auth.dao.impl.UsuarioDAOImpl;
 import org.esca.app.auth.dominio.Usuarios;
 import org.esca.app.util.Util;
 
@@ -15,6 +17,7 @@ import java.awt.event.KeyEvent;
 
 public class AuthForm extends JFrame {
 
+    private static AuthForm login;
     private Formulario formulario;
 
     public AuthForm() {
@@ -45,7 +48,7 @@ public class AuthForm extends JFrame {
 
         formulario.txtPassword.addKeyListener(new KeyAdapter() {
             @Override
-            public void keyTyped(KeyEvent e) {
+            public void keyPressed(KeyEvent e) {
                 txtPasswordKeyPressed(e);
             }
         });
@@ -63,7 +66,7 @@ public class AuthForm extends JFrame {
         }
     }
     private void btnLoginActionPerformed(ActionEvent evt){
-         this.logar();
+        this.logar();
     }
 
     private void logar(){
@@ -116,12 +119,40 @@ public class AuthForm extends JFrame {
         user.setEmail(email);
         user.setPassword(pwd);
 
-        this.logar(user);
+        this.conferirUser(user);
     }
 
+    //    20mP'd!`46zz
+    private void conferirUser(Usuarios user){
+        UsuarioDAOImpl dao = new UsuarioDAOImpl();
+        // Verifica se o usuário existe
+        Usuarios u = dao.selectEmailUser(user);
+        if (u == null){
+            JOptionPane.showMessageDialog(this, "Usuário não existe\nou não está cadastrado", "Warning", JOptionPane.WARNING_MESSAGE);
+        }else{
+            // Verifica se a senha é válida
+            boolean check = new Util().checkPassword(formulario.txtPassword.getText(), u);
+            if (!check){
+                JOptionPane.showMessageDialog(this, "Senha não confere.\nTente novamente", "Warning", JOptionPane.WARNING_MESSAGE);
+                return;
+            }else{
+                formulario.txtEmail.setText(null);
+                formulario.txtPassword.setText(null);
+                // Inicia o formulário principal
+                new FormMenu(u).start();
+                this.dispose();
 
-    private void logar(Usuarios user){
 
+            }
+        }
+
+    }
+
+    public static AuthForm getInstance(){
+        if (login == null){
+            login = new AuthForm();
+        }
+        return login;
     }
 
 }

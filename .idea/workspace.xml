@@ -5,29 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d807a0ca-7c0f-46c4-ba07-234c5f84e0be" name="Changes" comment="Adicionado Login">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/TesteDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/RoleDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/UsuarioDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/RoleDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/UsuarioDAOImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dominio/Roles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dominio/Usuarios.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/config/HibernateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/BCrypt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/CPF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/ComboBoxList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/Util.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/55827_lock_padlock_private_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/key.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/mail.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/RoleDAOImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/FormMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/StatusBar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/AuthForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/AuthForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Formulario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Formulario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Logotipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Logotipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/TitlePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/TitlePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/RoleDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/RoleDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/UsuarioDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/UsuarioDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +63,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "11 (2)",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/elias/Workspace/ProjectEsca/src/main/java/org/esca/app/util",
+    "last_opened_file_path": "/home/elias/Workspace/ProjectEsca/src/main/java/org/esca/app",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -87,13 +72,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/org/esca/app" />
       <recent name="$PROJECT_DIR$/src/main/java/org/esca/app/util" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.esca.app" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RoleDAOImplTest.tesAddRole">
+  <component name="RunManager" selected="Application.Esca">
     <configuration name="Esca" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="/usr/lib/jvm/java-11-openjdk-amd64" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -166,9 +152,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Esca" />
         <item itemvalue="JUnit.RoleDAOImplTest.tesAddRole" />
         <item itemvalue="Application.TesteDao" />
-        <item itemvalue="Application.Esca" />
       </list>
     </recent_temporary>
   </component>
@@ -176,8 +162,6 @@
     <attachedChunks>
       <set>
         <option value="jdk-11.0.21-corretto-11.0.21-4caba194b151-fab2e099" />
-        <option value="jdk-11.0.21-corretto-11.0.21-f644763e9732-a9dfd5e7" />
-        <option value="jdk-11.0.22-corretto-11.0.22-4caba194b151-bfa3237e" />
       </set>
     </attachedChunks>
   </component>

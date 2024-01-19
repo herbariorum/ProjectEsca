@@ -30,7 +30,7 @@ public class RoleDAOImpl implements RoleDAO {
 
     @Override
     public List<Roles> selectRole() {
-        return em.createQuery("SELECT u FROM Role u", Roles.class).getResultList();
+        return em.createQuery("FROM "+Roles.class.getName()).getResultList();
     }
 
     @Override
@@ -49,10 +49,9 @@ public class RoleDAOImpl implements RoleDAO {
 
     @Override
     public void updateRole(Roles role) {
-        Roles r = em.find(Roles.class, role.getId());
         try {
             em.getTransaction().begin();
-            r.setRole(role.getRole());
+            em.merge(role);
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,10 +63,10 @@ public class RoleDAOImpl implements RoleDAO {
 
     @Override
     public void deleteRole(Roles role) {
-        Roles r = em.find(Roles.class, role.getId());
         try {
             em.getTransaction().begin();
-            em.remove(r);
+            role = em.find(Roles.class, role.getId());
+            em.remove(role);
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();

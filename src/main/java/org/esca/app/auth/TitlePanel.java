@@ -3,6 +3,8 @@ package org.esca.app.auth;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class TitlePanel extends JPanel {
     public JButton btnClose;
@@ -11,11 +13,29 @@ public class TitlePanel extends JPanel {
     public TitlePanel(){
         setLayout(new GridBagLayout());
         setBorder(new EmptyBorder(5, 5, 5, 5));
-        setBackground(Color.BLUE);
+        setBackground(Color.BLACK);
 
-        btnClose = new JButton();
+        btnClose = new JButton("X");
+        btnClose.setForeground(Color.GRAY);
+        btnClose.setBorderPainted(false);
+        btnClose.setFocusPainted(false);
+        btnClose.setContentAreaFilled(false);
+
         btnClose.putClientProperty("JButton.buttonType", "roundRect");
-        btnClose.setIcon(new ImageIcon(getClass().getResource("/images/Fechar.png")));
+        btnClose.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                btnClose.setContentAreaFilled(true);
+                btnClose.setBackground(Color.RED);
+                btnClose.setForeground(Color.WHITE);
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e){
+                btnClose.setContentAreaFilled(false);
+                btnClose.setForeground(Color.GRAY);
+            }
+        });
 
 
         JLabel title = new JLabel("LOGIN FORM");

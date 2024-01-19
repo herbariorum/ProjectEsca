@@ -39,6 +39,7 @@ public class Formulario extends JPanel {
         txtPassword = new JPasswordField();
         txtPassword.putClientProperty("JTextField.leadingIcon", new ImageIcon(getClass().getResource("/images/key.png")));
         txtPassword.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Password");
+        txtPassword.putClientProperty(FlatClientProperties.STYLE, "showRevealButton:true;"+"showCapsLock:true;");
         txtPassword.setBounds(50, 300, 270, 27);
 
         lblPasswordMessage = new JLabel();
@@ -57,7 +58,5 @@ public class Formulario extends JPanel {
         add(lblPasswordMessage);
         add(btnLogin);
     }
-
-
 
 }

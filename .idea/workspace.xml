@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d807a0ca-7c0f-46c4-ba07-234c5f84e0be" name="Changes" comment="Adicionado Login">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/FormMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/StatusBar.java" afterDir="false" />
+    <list default="true" id="d807a0ca-7c0f-46c4-ba07-234c5f84e0be" name="Changes" comment="Terminado o login e Iniciado os cadastros de Usuários">
+      <change afterPath="$PROJECT_DIR$/src/test/java/UserDAOImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/AuthForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/AuthForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/RoleDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/RoleDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/UsuarioDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/UsuarioDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/Util.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Formulario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/Formulario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/TesteDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/TitlePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/TitlePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dominio/Usuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dominio/Usuarios.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RoleDAOImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RoleDAOImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +63,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "11 (2)",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/elias/Workspace/ProjectEsca/src/main/java/org/esca/app",
+    "last_opened_file_path": "/home/elias/Workspace/ProjectEsca/src/test/java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -72,6 +72,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java" />
       <recent name="$PROJECT_DIR$/src/main/java/org/esca/app" />
       <recent name="$PROJECT_DIR$/src/main/java/org/esca/app/util" />
     </key>
@@ -198,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705533680895</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Terminado o login e Iniciado os cadastros de Usuários">
+      <option name="closed" value="true" />
+      <created>1705627365555</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705627365555</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -206,7 +215,8 @@
     <MESSAGE value="Primeiro commit" />
     <MESSAGE value="Adicionado FlatLighLaf" />
     <MESSAGE value="Adicionado Login" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionado Login" />
+    <MESSAGE value="Terminado o login e Iniciado os cadastros de Usuários" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminado o login e Iniciado os cadastros de Usuários" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProjectEsca$Esca.ic" NAME="Esca Coverage Results" MODIFIED="1705521215549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

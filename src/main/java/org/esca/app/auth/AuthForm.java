@@ -141,11 +141,8 @@ public class AuthForm extends JFrame {
                 // Inicia o formulário principal
                 new FormMenu(u).start();
                 this.dispose();
-
-
             }
         }
-
     }
 
     public static AuthForm getInstance(){
@@ -154,5 +151,4 @@ public class AuthForm extends JFrame {
         }
         return login;
     }
-
 }

@@ -11,8 +11,13 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Locale;
+import org.apache.commons.validator.routines.EmailValidator;
+import org.esca.app.auth.dominio.Roles;
+import org.esca.app.util.Util;
+
 
 public class FormUsuariosAUX extends javax.swing.JDialog{
 
@@ -27,6 +32,7 @@ public class FormUsuariosAUX extends javax.swing.JDialog{
     private JTextField txtNome, txtCargo, txtPhone;
     private JComboBox<Object> cbxRoles;
     private JButton btnSave;
+    Locale local = new Locale("pt", "BR");
     
     Font fontError = new Font("Roboto Black", Font.ITALIC, 10);
 
@@ -116,8 +122,14 @@ public class FormUsuariosAUX extends javax.swing.JDialog{
         lblMsgCargo.setBounds(20, 165, 370, 27);
         lblMsgCargo.setFont(fontError);
 
-        txtPhone = new JTextField();
-        txtPhone.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Telefone");
+        txtPhone = new JTextField(11); // 6334561488
+        txtPhone.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Telefone Ex.: 63999329304");
+        txtPhone.addKeyListener(new java.awt.event.KeyAdapter(){
+            @Override
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtPhoneKeyTyped(evt);
+            }
+        });
         txtPhone.setBounds(20, 190, 370, 27);
         lblMsgPhone = new JLabel();
         lblMsgPhone.setForeground(Color.RED);
@@ -170,6 +182,13 @@ public class FormUsuariosAUX extends javax.swing.JDialog{
         setSize(new Dimension(410, 450));
         setLocationRelativeTo(null);
     }
+    
+    private void txtPhoneKeyTyped(java.awt.event.KeyEvent evt){
+        int key = evt.getKeyChar();
+        boolean numero = key >= 48 && key <= 57;
+        if (!numero) evt.consume();
+        if (txtPhone.getText().strip().length() == 11) evt.consume();
+    }
 
     private void saveActionPerformed(ActionEvent evt){
         switch (this.titulo) {
@@ -215,20 +234,97 @@ public class FormUsuariosAUX extends javax.swing.JDialog{
             txtNome.putClientProperty(FlatClientProperties.TEXT_FIELD_SHOW_CLEAR_BUTTON, true);
             txtNome.requestFocus();
             return;
-        } else {
+        } else if(nome.length() <= 5) {
+            lblMsgNome.setText("Nome deve ter no mínimo 5 characteres.");
+            txtNome.putClientProperty("JComponent.outline", "warning");
+            txtNome.putClientProperty(FlatClientProperties.TEXT_FIELD_SHOW_CLEAR_BUTTON, true);
+            txtNome.requestFocus();
+            return;
+        }else {
             lblMsgNome.setText(null);
             txtNome.putClientProperty("JComponent.outline", java.awt.Color.GREEN);
         }
+        if (!EmailValidator.getInstance().isValid(email)){
+            lblMsgEmail.setText("Email inválido");
+            txtEmail.putClientProperty("JComponent.outline", "warning");
+            txtEmail.putClientProperty(FlatClientProperties.TEXT_FIELD_SHOW_CLEAR_BUTTON, true);
+            txtEmail.requestFocus();
+            return;
+        }else{
+            lblMsgEmail.setText(null);
+            txtEmail.putClientProperty("JComponent.outline", java.awt.Color.GREEN);
+        }
         
-        this.user = new Usuarios();
+        if (cargo.isEmpty()) {
+            lblMsgCargo.setText("Cargo é obrigatório");
+            txtCargo.putClientProperty("JComponent.outline", "warning");
+            txtCargo.putClientProperty(FlatClientProperties.TEXT_FIELD_SHOW_CLEAR_BUTTON, true);
+            txtCargo.requestFocus();
+            return;
+        }else{
+            lblMsgCargo.setText(null);
+            txtCargo.putClientProperty("JComponent.outline", java.awt.Color.GREEN);
+        }
+        if (!phone.matches("\\d{11}")){
+            lblMsgPhone.setText("Telefone é obrigatório");
+            txtPhone.putClientProperty("JComponent.outline", "warning");
+            txtPhone.putClientProperty(FlatClientProperties.TEXT_FIELD_SHOW_CLEAR_BUTTON, true);
+            txtPhone.requestFocus();
+            return;
+        }else{
+            lblMsgPhone.setText(null);
+            txtPhone.putClientProperty("JComponent.outline", java.awt.Color.GREEN);
+        }
+        if (pwd.isEmpty()){
+            lblMsgPwd.setText("Password é obrigatório");
+            txtPassword.putClientProperty("JComponent.outline", "warning");
+            txtPassword.putClientProperty(FlatClientProperties.TEXT_FIELD_SHOW_CLEAR_BUTTON, true);
+            txtPassword.requestFocus();
+            return;
+        }
+        else if (!new Util().isValidPwd(pwd)){
+            lblMsgPwd.setText("Password inválido");
+            txtPassword.putClientProperty("JComponent.outline", "warning");
+            txtPassword.putClientProperty(FlatClientProperties.TEXT_FIELD_SHOW_CLEAR_BUTTON, true);
+            txtPassword.requestFocus();
+            return;
+        }else{
+            lblMsgPwd.setText(null);
+            txtPassword.putClientProperty("JComponent.outline", java.awt.Color.GREEN);
+        }
+        
+        LocalDate created_at = LocalDate.now();
+        
+        // Envia os dados para a classe de serviço
+        this.user.setNome(nome);
+        this.user.setEmail(email);
+        this.user.setCargo(cargo);
+        this.user.setPhone(phone);
+        ComboBoxList roleId = (ComboBoxList) this.cbxRoles.getSelectedItem();
+        Roles role = new Roles();
+        role.setId(roleId.getId());        
+        this.user.setRole(role);
+        this.user.setPassword(new Util().gerarPassword(pwd));
+        this.user.setCreated_at(created_at);
         
         
-        daoUser.addUser(this.user);
+        // popula no banco de dados;
+        this.save(this.user);        
+        
     
     }
     private void atualizar(){
     }
 
+    private void save(Usuarios u){
+         if (user.getId() == null){
+            daoUser.addUser(u);
+          
+        }else {
+            daoUser.updateUser(u);
+        }
+    }
+    
     private void setComboBoxRole(){
         daoRole.comboBoxRole();
         cbxRoles.removeAllItems();

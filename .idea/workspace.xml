@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d807a0ca-7c0f-46c4-ba07-234c5f84e0be" name="Changes" comment="Terminado o login e Iniciado os cadastros de Usuários II">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/cadastros/fragmentos/PanelButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/cadastros/fragmentos/PanelTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/cadastros/usuarios/FormUsuariosAUX.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/cadastros/usuarios/config/UserCellRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/cadastros/usuarios/config/UserTableModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/ViewAbstractTableModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/24 search.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/24_user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/32 delete.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/32 edit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/images/32 new.png" afterDir="false" />
+    <list default="true" id="d807a0ca-7c0f-46c4-ba07-234c5f84e0be" name="Changes" comment="Adicionado a Manutenção dos Usuários">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/FormMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/FormMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/RoleDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dao/impl/RoleDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dominio/Usuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/auth/dominio/Usuarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/cadastros/usuarios/ListaUsuarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/cadastros/usuarios/ListaUsuarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/esca/app/util/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/esca/app/util/Util.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,28 +46,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Application.executor": "Run",
-    "Application.Esca.executor": "Run",
-    "Application.TesteDao.executor": "Run",
-    "Application.org.esca.app.Application.executor": "Run",
-    "JUnit.RoleDAOImplTest.tesAddRole.executor": "Run",
-    "Maven.ProjectEsca [clean].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "11 (2)",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/elias/Workspace/ProjectEsca/src/main/resources/images",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "inlay.hints"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Esca.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TesteDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.org.esca.app.Application.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RoleDAOImplTest.tesAddRole.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ProjectEsca [clean].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11 (2)&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/elias/Workspace/ProjectEsca/src/main/resources/images&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/images" />
@@ -229,8 +215,34 @@
       <option name="project" value="LOCAL" />
       <updated>1705628163086</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adicionado a Manutenção dos Usuários">
+      <option name="closed" value="true" />
+      <created>1705695703379</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705695703379</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="executable:docker" />
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:jakarta.persistence:jakarta.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:javax.persistence:javax.persistence-api" />
+    <option featureType="dependencySupport" implementationName="java:org.projectlombok:lombok" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -239,7 +251,8 @@
     <MESSAGE value="Adicionado Login" />
     <MESSAGE value="Terminado o login e Iniciado os cadastros de Usuários" />
     <MESSAGE value="Terminado o login e Iniciado os cadastros de Usuários II" />
-    <option name="LAST_COMMIT_MESSAGE" value="Terminado o login e Iniciado os cadastros de Usuários II" />
+    <MESSAGE value="Adicionado a Manutenção dos Usuários" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionado a Manutenção dos Usuários" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ProjectEsca$Esca.ic" NAME="Esca Coverage Results" MODIFIED="1705521215549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

@@ -14,7 +14,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
 
 
     private final HibernateConfig hc = new HibernateConfig();
-    private EntityManager em;
+    private final EntityManager em;
     private ArrayList<ComboBoxList> list;
 
     public UsuarioDAOImpl() {
@@ -38,7 +38,6 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             em.persist(usuarios);
             em.getTransaction().commit();
         } catch (Exception e) {
-            e.printStackTrace();
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback();
             }
@@ -52,7 +51,6 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             em.merge(usuarios);
             em.getTransaction().commit();
         } catch (Exception e) {
-            e.printStackTrace();
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback();
             }
@@ -67,7 +65,6 @@ public class UsuarioDAOImpl implements UsuarioDAO {
             em.remove(usuarios);
             em.getTransaction().commit();
         } catch (Exception e) {
-            e.printStackTrace();
             if (em.getTransaction().isActive()) {
                 em.getTransaction().rollback();
             }

@@ -12,19 +12,23 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class FormUsuariosAUX extends javax.swing.JDialog{
 
     private Usuarios user = new Usuarios();
     private final UsuarioDAOImpl daoUser = new UsuarioDAOImpl();
     private final RoleDAOImpl daoRole = new RoleDAOImpl();
-    private String titulo;
+    private final String titulo;
     private static BarraTitulo bt;
     private JTextField txtEmail;
+    private JLabel lblMsgEmail, lblMsgNome, lblMsgCargo, lblMsgPhone, lblMsgPwd;
     private JPasswordField txtPassword;
     private JTextField txtNome, txtCargo, txtPhone;
     private JComboBox<Object> cbxRoles;
     private JButton btnSave;
+    
+    Font fontError = new Font("Roboto Black", Font.ITALIC, 10);
 
     // NEW
     public FormUsuariosAUX(javax.swing.JDialog parent, boolean modal, String titulo){
@@ -80,11 +84,8 @@ public class FormUsuariosAUX extends javax.swing.JDialog{
          */
         bt = new BarraTitulo();
         bt.title.setText("Manutenção de Usuários - "+this.titulo);
-        bt.btnClose.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                dispose();
-            }
+        bt.btnClose.addActionListener((ActionEvent actionEvent) -> {
+            dispose();
         });
 
         JPanel formulario = new JPanel();
@@ -93,43 +94,65 @@ public class FormUsuariosAUX extends javax.swing.JDialog{
 
         txtNome = new JTextField();
         txtNome.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Nome do Usuário");
-        txtNome.setBounds(20, 30, 370, 27);
+        txtNome.setBounds(20, 40, 370, 27);
+        lblMsgNome = new JLabel();
+        lblMsgNome.setForeground(Color.RED);
+        lblMsgNome.setBounds(20, 65, 370, 27);
+        lblMsgNome.setFont(fontError);
 
         txtEmail = new JTextField();
         txtEmail.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Email");
-        txtEmail.setBounds(20, 70, 370, 27);
+        txtEmail.setBounds(20, 90, 370, 27);
+        lblMsgEmail = new JLabel();
+        lblMsgEmail.setForeground(Color.RED);
+        lblMsgEmail.setBounds(20, 115, 370, 27);
+        lblMsgEmail.setFont(fontError);
 
         txtCargo = new JTextField();
         txtCargo.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Cargo");
-        txtCargo.setBounds(20, 110, 370, 27);
+        txtCargo.setBounds(20, 140, 370, 27);
+        lblMsgCargo = new JLabel();
+        lblMsgCargo.setForeground(Color.RED);
+        lblMsgCargo.setBounds(20, 165, 370, 27);
+        lblMsgCargo.setFont(fontError);
 
         txtPhone = new JTextField();
         txtPhone.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Telefone");
-        txtPhone.setBounds(20, 160, 370, 27);
+        txtPhone.setBounds(20, 190, 370, 27);
+        lblMsgPhone = new JLabel();
+        lblMsgPhone.setForeground(Color.RED);
+        lblMsgPhone.setBounds(20, 215, 370, 27);
+        lblMsgPhone.setFont(fontError);
 
         cbxRoles = new JComboBox<>();
-        cbxRoles.setBounds(20, 210, 370, 27);
+        cbxRoles.setBounds(20, 240, 370, 27);
 
         txtPassword = new JPasswordField();
         txtPassword.putClientProperty(FlatClientProperties.PLACEHOLDER_TEXT, "Password");
         txtPassword.putClientProperty(FlatClientProperties.STYLE, "showRevealButton:true;"+"showCapsLock:true;");
-        txtPassword.setBounds(20, 260, 370, 27);
+        txtPassword.setBounds(20, 275, 370, 27);
+        lblMsgPwd = new JLabel();
+        lblMsgPwd.setForeground(Color.RED);
+        lblMsgPwd.setBounds(20, 300, 370, 27);
+        lblMsgPwd.setFont(fontError);
 
         btnSave = new JButton(this.titulo);
-        btnSave.setBounds(20, 310, 100, 30);
-        btnSave.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                saveActionPerformed(actionEvent);
-            }
+        btnSave.setBounds(20, 340, 100, 30);
+        btnSave.addActionListener((ActionEvent actionEvent) -> {
+            saveActionPerformed(actionEvent);
         });
 
         formulario.add(txtNome);
+        formulario.add(lblMsgNome);
         formulario.add(txtEmail);
+        formulario.add(lblMsgEmail);
         formulario.add(txtCargo);
+        formulario.add(lblMsgCargo);
         formulario.add(txtPhone);
+        formulario.add(lblMsgPhone);
         formulario.add(cbxRoles);
         formulario.add(txtPassword);
+        formulario.add(lblMsgPwd);
         formulario.add(btnSave);
 
         // Adiciona a barra de titulo e o formulario ao JPanel principal
@@ -144,7 +167,7 @@ public class FormUsuariosAUX extends javax.swing.JDialog{
         gbc.gridy = 2;
         content.add(formulario, gbc);
 
-        setSize(new Dimension(410, 430));
+        setSize(new Dimension(410, 450));
         setLocationRelativeTo(null);
     }
 
@@ -179,7 +202,30 @@ public class FormUsuariosAUX extends javax.swing.JDialog{
         }
     }
 
-    private void adicionar(){}
+    private void adicionar(){
+        // Pega os valores dos campos
+        String nome = txtNome.getText();
+        String email = txtEmail.getText();
+        String cargo = txtCargo.getText();
+        String phone = txtPhone.getText();
+        String pwd = Arrays.toString(txtPassword.getPassword());
+        if (nome.isEmpty()) {
+            lblMsgNome.setText("Nome é obrigatório");
+            txtNome.putClientProperty("JComponent.outline", "warning");
+            txtNome.putClientProperty(FlatClientProperties.TEXT_FIELD_SHOW_CLEAR_BUTTON, true);
+            txtNome.requestFocus();
+            return;
+        } else {
+            lblMsgNome.setText(null);
+            txtNome.putClientProperty("JComponent.outline", java.awt.Color.GREEN);
+        }
+        
+        this.user = new Usuarios();
+        
+        
+        daoUser.addUser(this.user);
+    
+    }
     private void atualizar(){
     }
 
